@@ -1,0 +1,49 @@
+﻿@model Optivet.Models.ImageSliderModel
+
+
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+
+            <ul class="bxslider">
+              @foreach (var image in Model.images){
+                  <li><img src="@Url.Content(image.ImagePath)" title="@image" /></li>
+              }
+            </ul>
+
+        </div>
+    </section>
+}
+<h1 class="centeredHeading">Нашата философия</h1><hr class="bodyText" />
+
+        
+        
+        <p class="bodyText">
+            <span id="capitalLetter">В </span> съвременния свят домашните любимци отдавна са се превърнали в членове на нашите семейства, другари в игрите и в свободното време, спътници в живота - със сигурност същества, които са в много интензивна връзка с нас. 
+            Ние им отдаваме нашата обич и внимание като ги получаваме обратно в много по-голяма степен.
+            
+            <br /><br />Когато тази връзка бъде нарушена от болест, травма или промени в поведението се появява нуждата от лечение, както и много свързани с това страхове и въпроси. 
+            Ние желаем да бъдем Ваши съветници и спътници, Ваши събеседници за всички възникващи въпроси касаещи ветеринарната медицина.
+            
+            <br /><br />Основен закон в нашата работа е да ВИ КАЗВАМЕ ВИНАГИ ИСТИНАТА ЗА СЪСТОЯНИЕТО НА ВАШИТЕ ЛЮБИМЦИ, колкото и трудно да е това понякога. </p>
+ 
+
+@section Scripts {
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+     <!-- bxSlider Javascript file -->
+     <script src="Scripts/jquery.bxslider.min.js"></script>
+     <!-- bxSlider CSS file -->
+     <link href="Content/jquery.bxslider.css" rel="stylesheet" />
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.bxslider').bxSlider({ auto: true });
+        });
+    </script>
+}
